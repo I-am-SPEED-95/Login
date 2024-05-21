@@ -24,14 +24,12 @@ public class CrackGPT extends Application {
     private ResourceBundle resourceBundle;
     private Label languageLabel;
 
-    public static void main(String[] args) {
-        launch();
-    }
+
 
     @Override
     public void start(Stage stage) throws IOException {
         Scene scene = createScene();
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("org/example/crackgui/style2.css").toExternalForm());
         stage.setTitle("CrackGPT-4");
         stage.setScene(scene);
         stage.show();

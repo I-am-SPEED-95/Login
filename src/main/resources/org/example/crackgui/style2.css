@@ -1,0 +1,54 @@
+.body{
+    -fx-background: #2067DC;
+}
+
+.crackgpt-label{
+    -fx-font-size: 25px;
+    -fix-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+.text-area{
+    -fx-font-size: 16px;
+    -fx-control-inner-background: #82ADF4;
+}
+
+.setting-label{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.setting-combo-box{
+    -fx-font-size: 16px;
+    -fix-control-inner-background: #82ADF4;
+    -fx-background-color: #82ADF4;
+}
+
+.talk-btn{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-color: #82ADF4;
+    -fx-text-fill: white;
+    -fx-padding: 0;
+}
+
+.talk-btn:pressed{
+    -fx-opacity: 0.75;
+}
+
+.hamburger-button {
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+    -fx-border-width: 0;
+    -fx-text-fill: black;
+}
+
+.menu {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+.root {
+    -fx-background-color: #2067DC;
+}
+

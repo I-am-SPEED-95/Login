@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<?import javafx.scene.control.PasswordField?>
+<VBox fx:id="vbox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="480.0" styleClass="blue-panel" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.crackgui.LoginController">
+    <children>
+        <ImageView fitHeight="101.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@logo3.png" />
+            </image>
+            <VBox.margin>
+                <Insets bottom="10.0" left="190.0" />
+            </VBox.margin>
+        </ImageView>
+        <Label prefHeight="58.0" prefWidth="263.0" text="CRACKED-GPT">
+            <font>
+                <Font size="40.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="0.6098485137477065" endY="1.0" startX="0.49242424919749755" startY="0.43181818543058453">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.07017543911933899" green="0.40643274784088135" blue="0.9473684430122375" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.0117647061124444" green="0.24313725531101227" blue="0.6117647290229797" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+            <VBox.margin>
+                <Insets left="110.0" />
+            </VBox.margin>
+        </Label>
+        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="442.0" text="Login">
+            <font>
+                <Font size="36.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="25.0" left="20.0" />
+            </VBox.margin>
+            <textFill>
+                <LinearGradient endX="0.6098485137477065" endY="1.0" startX="0.49242424919749755" startY="0.43181818543058453">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.07017543911933899" green="0.40643274784088135" blue="0.9473684430122375" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.0117647061124444" green="0.24313725531101227" blue="0.6117647290229797" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+            <children>
+                <TextField fx:id="loginGebruikersnaamField" prefHeight="52.0" prefWidth="422.0" promptText="Gebruikersnaam" styleClass="tf_box">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin></TextField>
+                <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.3em" />
+            </children>
+            <VBox.margin>
+                <Insets left="15.0" right="15.0" top="15.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+            <children>
+                <PasswordField fx:id="loginWachtwoordField" prefHeight="52.0" prefWidth="425.0" promptText="Wachtwoord" styleClass="tf_box">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets bottom="30.0" />
+                    </HBox.margin></PasswordField>
+                <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="1.3em" />
+            </children>
+            <VBox.margin>
+                <Insets left="15.0" right="15.0" top="20.0" />
+            </VBox.margin>
+        </HBox>
+        <Button fx:id="loginButton" mnemonicParsing="false" prefHeight="38.0" prefWidth="287.0" styleClass="blue-btn" text="Inloggen" textFill="WHITE">
+            <font>
+                <Font size="17.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="20.0" left="95.0" />
+            </VBox.margin>
+        </Button>
+    </children>
+</VBox>
