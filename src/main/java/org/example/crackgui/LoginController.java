@@ -1,6 +1,5 @@
 package org.example.crackgui;
 
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +11,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import org.example.crackgui.gebruikers.Gebruiker;
 
 import java.io.*;
@@ -69,45 +67,34 @@ public class LoginController implements Initializable {
     }
 
     private void loadInitialView() {
-        vbox.setTranslateX(vbox.getLayoutX() * 20);
-        TranslateTransition t = new TranslateTransition(Duration.seconds(1), vbox);
-        t.setToX(vbox.getLayoutX() * 20);
-        t.play();
-        t.setOnFinished((e) -> {
-            try {
-                fxml = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
-                vbox.getChildren().removeAll();
-                vbox.getChildren().setAll(fxml);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
+        try {
+            fxml = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
+            vbox.getChildren().removeAll();
+            vbox.getChildren().setAll(fxml);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     @FXML
     private void open_signin(ActionEvent event) {
-        loadFXML("SignIn.fxml", vbox.getLayoutX() * 20);
+        loadFXML("SignIn.fxml");
     }
 
     @FXML
     private void open_signup(ActionEvent event) {
-        loadFXML("SignUp.fxml", 0);
+        loadFXML("SignUp.fxml");
     }
 
-    private void loadFXML(String fxmlFile, double toX) {
-        TranslateTransition t = new TranslateTransition(Duration.seconds(1), vbox);
-        t.setToX(toX);
-        t.play();
-        t.setOnFinished((e) -> {
-            try {
-                fxml = FXMLLoader.load(getClass().getResource(fxmlFile));
-                vbox.getChildren().clear();
-                vbox.getChildren().add(fxml);
-            } catch (IOException ex) {
-                showAlert("Error", "Could not load the FXML file: " + fxmlFile);
-                ex.printStackTrace();
-            }
-        });
+    private void loadFXML(String fxmlFile) {
+        try {
+            fxml = FXMLLoader.load(getClass().getResource(fxmlFile));
+            vbox.getChildren().clear();
+            vbox.getChildren().add(fxml);
+        } catch (IOException ex) {
+            showAlert("Error", "Could not load the FXML file: " + fxmlFile);
+            ex.printStackTrace();
+        }
     }
 
     private void registreer() {
@@ -131,6 +118,7 @@ public class LoginController implements Initializable {
             Gebruiker gebruiker = new Gebruiker(id, gebruikersnaam, wachtwoord);
             saveGebruiker(gebruiker);
             showAlert("Success", "Gebruiker succesvol geregistreerd.");
+            open_signin(null);
         } catch (IOException e) {
             showAlert("Error", "Er is een fout opgetreden bij het registreren van de gebruiker.");
             e.printStackTrace();
@@ -213,4 +201,9 @@ public class LoginController implements Initializable {
         }
     }
 
+    @FXML
+    private void exit(ActionEvent event) {
+        Stage stage = (Stage) vbox.getScene().getWindow();
+        stage.close();
+    }
 }

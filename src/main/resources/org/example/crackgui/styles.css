@@ -15,8 +15,12 @@
 .white-pane{
     -fx-background-color: white;
 }
-.blue-panel{
+
+.blue-panel {
     -fx-background-color: #151928;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 20;
 }
 .tf_box{
     -fx-background-color: transparent;
